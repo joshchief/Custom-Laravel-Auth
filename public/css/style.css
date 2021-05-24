@@ -1,0 +1,54 @@
+.card-body{
+    margin: 0 auto;
+}
+.card{
+    top: 40px;
+    margin: 0 auto;
+    width: 28rem;
+    /* height: 90vh; */
+}
+
+.card-header h2{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight:700;
+    text-align: center;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+input[type=text], input[type=password]{
+    width: 100%;
+    padding: 10px;
+    margin: 2px 0 15px 0;
+    display: block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text], input[type=password]:focus {
+    outline: none;
+}
+
+
+#reg-btn{
+    background-color: #04AA6D;
+    color: white;
+    padding: 15px 20px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+#reg-btn:hover {
+    opacity: 1;
+}
+
+.signin{
+    background-color: #f1f1f1;
+    margin: 5px 0;
+}
+
