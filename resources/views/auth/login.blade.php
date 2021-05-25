@@ -10,22 +10,17 @@
 </head>
 <body>
     <form action="" method="POST">
-        <div class="card">
+      @csrf
+        <div class="card">        
+            @include('messages.alert')          
             <div class="card-header">
-              <h2>Register</h2>
+              <h2>Login</h2>
             </div>
             <div class="card-body">
-                <label for="name"> <strong>Name</strong> :</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                  required
-                /> 
+        
                 <label for="email"> <strong>Email Address</strong> :</label>
                 <input
-                  type="email"
+                  type="text"
                   id="email"
                   name="email"
                   placeholder="Enter email"
@@ -39,18 +34,15 @@
                   placeholder="Enter password"
                   required
                 />
-                <label for="password2"> <strong>Confirm Password</strong> :</label>
-                <input
-                  type="password"
-                  id="password2"
-                  name="password2"
-                  placeholder="Confirm password"
-                  required
-                />
-                <p>By creating an account you agree to our <a href="#"> Terms & Policy</a></p>
-              <input type="button" class="btn btn-primary"  id="reg-btn" value="Register">
+    
+    
+              <button id="reg-btn">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+              <span class="psw float-right">Forgot <a href="#">password?</a></span>
               <div class="container signin">
-                <p>Already have an account? <a href="#">Sign in</a>.</p>
+                <p>Don't have an account? <a href="/register">Sign up</a>.</p>
               </div>
             </div>
           </div>
