@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'loginForm']);
 Route::post('/login', [LoginController::class, 'loginUser']);
 
-
+// auth routes 
 Route::get('/register', [RegisterController::class, 'createUser']);
 Route::post('/register', [RegisterController::class, 'storeUser']);
+Route::get('/logout', [LoginController::class, 'logout']);
