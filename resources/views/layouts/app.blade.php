@@ -26,8 +26,7 @@
                     <li>
                         <a href="/logout">Logout</a>
                     </li>
-                </form>
-                    
+                </form>   
                 @endif
                 
             </ul>

@@ -8,7 +8,10 @@ use Auth;
 
 class LoginController extends Controller
 {
-    
+    public function home()
+    {
+        return view('home');
+    }
     public function loginForm()
     {
         return view('auth.login');
@@ -31,6 +34,10 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials))
         {
+            if(Auth::user()->email_verified_at == null){
+                Auth::logout();
+                return redirect('login')->with('error', 'Please verify your email');
+            }
             return redirect('/');
         }
 

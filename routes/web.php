@@ -17,13 +17,15 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/login', [LoginController::class, 'loginForm']);
 Route::post('/login', [LoginController::class, 'loginUser']);
 
-// auth routes 
+// auth routes
 Route::get('/register', [RegisterController::class, 'createUser']);
 Route::post('/register', [RegisterController::class, 'storeUser']);
 Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::get('/verify/{token}', [RegisterController::class, 'verifyEmail']);

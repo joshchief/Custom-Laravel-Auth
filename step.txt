@@ -1,0 +1,14 @@
+setup login/ register routes
+
+create some models and migration (verifyUser Model)
+
+define eloquent relationship
+
+create verifyEmail mailable class
+
+create verifyEmail view file
+
+add functionality to login and register
+
+setup routes for verifying user
+
