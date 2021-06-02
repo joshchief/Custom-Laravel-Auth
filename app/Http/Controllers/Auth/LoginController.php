@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Users;
 use Auth;
@@ -12,6 +13,8 @@ class LoginController extends Controller
     {
         return view('home');
     }
+
+    
     public function loginForm()
     {
         return view('auth.login');
@@ -41,7 +44,10 @@ class LoginController extends Controller
             return redirect('/');
         }
 
-        return redirect('login')->with('error', 'Oops! Invalid credentials');
+        return redirect()
+                ->back()
+                ->with('error', 'Oops! Invalid credentials')
+                ->withInput();
     }
 
    
@@ -51,3 +57,5 @@ class LoginController extends Controller
         return redirect('login');
     }
 }
+
+

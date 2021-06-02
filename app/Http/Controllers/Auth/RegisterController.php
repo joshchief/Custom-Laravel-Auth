@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ use App\Models\VerifyUser;
 
 class RegisterController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -55,23 +56,23 @@ class RegisterController extends Controller
         if($validator->fails()){
             return redirect()->back()
                     ->withErrors($validator)
-                    ->withInput();
+                    ->withInput(Input::all());
         }
 
        $user = User::create([
            'name' => $request->name,
            'email' => $request->email,
-           'password' => hash::make($request->password)
+           'password' =>Hash::make($request->password)
        ]);
 
         VerifyUser::create([
             'token' => Str::random(60),
             'user_id' => $user->id
         ]);
-        
-        Mail::to($user->email)->send(new VerifyEmail($user)); 
-        
-        return redirect('login')->with('success', 'Registration successful!');
+
+        Mail::to($user->email)->send(new VerifyEmail($user));
+            
+        return redirect('login')->with('info', 'Please click on the link sent to your email');
 
         
     }
@@ -99,3 +100,4 @@ class RegisterController extends Controller
         }
     }
 }
+

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
   <form action="" method="POST">
     @csrf
@@ -32,7 +33,7 @@
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
-            <span class="psw float-right">Forgot <a href="#">password?</a></span>
+            <span class="psw float-right"><a href="/forgot-password">Forgot password?</a></span>
             <div class="container signin">
               <p>Don't have an account? <a href="/register">Sign up</a>.</p>
             </div>
