@@ -7,9 +7,9 @@
     <title>Reset Password</title>
 </head>
 <body>
-    <h1>Forgot Password Email</h1>
+    <h1>Reset Password Link</h1>
 
-    <h2>You can reset your password from link below:</h2>
+    <h2>Click on the link below to reset password:</h2>
     <p><a href="{{ route('reset.password.get', $token) }}">Reset Password</a></p>
 </body>
 </html>

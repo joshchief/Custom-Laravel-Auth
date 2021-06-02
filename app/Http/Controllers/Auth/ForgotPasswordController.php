@@ -27,7 +27,7 @@ class ForgotPasswordController extends Controller
      */
     public function submitForgetPasswordForm(Request $request)
     {
-        // check & validate email
+        // check & validate inputted Email
         $request->validate([
             'email' => 'required|email|exists:users',
         ]);
@@ -44,6 +44,7 @@ class ForgotPasswordController extends Controller
 
         // Mail::send('email view', [array of data to the view], closure callback to customize recipient, subject etc)
         Mail::send('email.forgotPassword', ['token' => $token], function($message) use($request){
+            $message->from('ushebaresourcesltd@gmail.com', 'Custom-Laravel-Auth');
             $message->to($request->email);
             $message->subject('Reset Password');
         });
