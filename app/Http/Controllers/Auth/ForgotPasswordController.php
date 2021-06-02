@@ -13,21 +13,7 @@ use Hash;
 
 class ForgotPasswordController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        
-    }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function showForgotPasswordForm()
     {
         return view('auth.forgot-password');
@@ -124,15 +110,4 @@ class ForgotPasswordController extends Controller
         return redirect('/login')->with('success', 'Your Password has been changed');
         
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }//
 }
